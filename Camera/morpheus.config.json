@@ -1,0 +1,7 @@
+{
+  "legacyJsOutPut": "web/public/js",
+  "projectName": "FullStack",
+  "androidPackageName": "mcore.edu.qwer",
+  "androidAppName": "qwer",
+  "applicationId": "mcore.edu"
+}

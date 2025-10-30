@@ -1,0 +1,202 @@
+[
+    {
+        "merged": "mcore.mobile.app-debug-47:/mipmap-hdpi_ic_launcher_monochrome.png.flat",
+        "source": "mcore.mobile.app-main-49:/mipmap-hdpi/ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/layout_sample.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/layout/sample.xml"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/layout_batchone.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/layout/batchone.xml"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/drawable_start_bg.jpg.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/drawable/start_bg.jpg"
+    },
+    {
+        "merged": "mcore.mobile.app-debug-47:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "mcore.mobile.app-main-49:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "mcore.mobile.app-debug-47:/mipmap-xhdpi_ic_launcher_background.png.flat",
+        "source": "mcore.mobile.app-main-49:/mipmap-xhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "mcore.mobile.app-debug-47:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "mcore.mobile.app-main-49:/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/drawable-hdpi_notice_list_bg.9.png.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/drawable-hdpi/notice_list_bg.9.png"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/layout_image_folder_list.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/layout/image_folder_list.xml"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/layout_image_list_item.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/layout/image_list_item.xml"
+    },
+    {
+        "merged": "mcore.mobile.app-debug-47:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "mcore.mobile.app-main-49:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/drawable-hdpi_tab_shadow.9.png.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/drawable-hdpi/tab_shadow.9.png"
+    },
+    {
+        "merged": "mcore.mobile.app-debug-47:/mipmap-hdpi_ic_launcher_background.png.flat",
+        "source": "mcore.mobile.app-main-49:/mipmap-hdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "mcore.mobile.app-debug-47:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "mcore.mobile.app-main-49:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "mcore.mobile.app-debug-47:/mipmap-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "mcore.mobile.app-main-49:/mipmap-xxxhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "mcore.mobile.app-debug-47:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "mcore.mobile.app-main-49:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/layout_image_details_activity.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/layout/image_details_activity.xml"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/drawable_imagelist_round.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/drawable/imagelist_round.xml"
+    },
+    {
+        "merged": "mcore.mobile.app-debug-47:/mipmap-mdpi_ic_launcher_monochrome.png.flat",
+        "source": "mcore.mobile.app-main-49:/mipmap-mdpi/ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/xml_network_security_config.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/xml/network_security_config.xml"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/layout_gridview_item.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/layout/gridview_item.xml"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/drawable-xxhdpi_drawable.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/drawable-xxhdpi/drawable.xml"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/layout_gridview_item2.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/layout/gridview_item2.xml"
+    },
+    {
+        "merged": "mcore.mobile.app-debug-47:/mipmap-xxhdpi_ic_launcher_background.png.flat",
+        "source": "mcore.mobile.app-main-49:/mipmap-xxhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/layout_listitem.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/layout/listitem.xml"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/drawable-mdpi_icon.png.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/drawable-mdpi/icon.png"
+    },
+    {
+        "merged": "mcore.mobile.app-debug-47:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "mcore.mobile.app-main-49:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "mcore.mobile.app-debug-47:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "mcore.mobile.app-main-49:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/layout_nativelist.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/layout/nativelist.xml"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/drawable-hdpi_icon.png.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/drawable-hdpi/icon.png"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/layout_batchtwo.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/layout/batchtwo.xml"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/layout_mapview.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/layout/mapview.xml"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/drawable-xhdpi_drawable.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/drawable-xhdpi/drawable.xml"
+    },
+    {
+        "merged": "mcore.mobile.app-debug-47:/mipmap-mdpi_ic_launcher_background.png.flat",
+        "source": "mcore.mobile.app-main-49:/mipmap-mdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/layout_activity_imagelist2.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/layout/activity_imagelist2.xml"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/layout_listitemtitle.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/layout/listitemtitle.xml"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/drawable-xxxhdpi_drawable.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/drawable-xxxhdpi/drawable.xml"
+    },
+    {
+        "merged": "mcore.mobile.app-debug-47:/mipmap-xhdpi_ic_launcher_monochrome.png.flat",
+        "source": "mcore.mobile.app-main-49:/mipmap-xhdpi/ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "mcore.mobile.app-debug-47:/mipmap-xxhdpi_ic_launcher_monochrome.png.flat",
+        "source": "mcore.mobile.app-main-49:/mipmap-xxhdpi/ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/drawable-anydpi_drawable.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/drawable-anydpi/drawable.xml"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/drawable-hdpi_general_title_btn_before.png.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/drawable-hdpi/general_title_btn_before.png"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/layout_activity_imagelist.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/layout/activity_imagelist.xml"
+    },
+    {
+        "merged": "mcore.mobile.app-debug-47:/mipmap-xxxhdpi_ic_launcher_monochrome.png.flat",
+        "source": "mcore.mobile.app-main-49:/mipmap-xxxhdpi/ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "mcore.mobile.app-debug-47:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "mcore.mobile.app-main-49:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "mcore.mobile.app-debug-47:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "mcore.mobile.app-main-49:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/layout_image_list.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/layout/image_list.xml"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/drawable-ldpi_icon.png.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/drawable-ldpi/icon.png"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/layout_main.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/layout/main.xml"
+    },
+    {
+        "merged": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-debug-47:/layout_sample2.xml.flat",
+        "source": "/Users/euncheok/.gradle/daemon/8.13/mcore.mobile.app-main-49:/layout/sample2.xml"
+    },
+    {
+        "merged": "mcore.mobile.app-debug-47:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "mcore.mobile.app-main-49:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    }
+]

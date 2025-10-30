@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="listitem_div">#ffc2c7da</color>
+    <string name="app_name">demo</string>
+    <string name="app_package">mcore.mobile.app</string>
+    <string name="hello">Hello World, HybridMobileApp!</string>
+    <string name="mp_addon_maxpicker">사진은 총 %d개까지만 첨부 가능합니다.</string>
+    <string name="nbutton1">통신테스트</string>
+    <string name="nbutton2">네이티브화면</string>
+    <string name="nbutton3">UI웹화면</string>
+    <string name="sTitle1">받은 파라메터 데이터</string>
+    <string name="sTitle2">Network error</string>
+    <style name="newdialog">
+		<item name="android:windowFrame">@null</item>
+		<item name="android:windowBackground">@android:color/transparent</item>
+		<item name="android:windowIsFloating">true</item>
+		<item name="android:windowContentOverlay">@null</item>
+		<item name="android:windowTitleStyle">@null</item>
+		<item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+		<item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+		<item name="android:backgroundDimEnabled">false</item>
+		<item name="android:background">@android:color/transparent</item>
+	</style>
+</resources>

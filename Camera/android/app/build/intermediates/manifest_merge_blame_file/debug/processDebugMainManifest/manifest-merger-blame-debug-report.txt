@@ -1,0 +1,569 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="mcore.edu.qwer"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="35" />
+10
+11    <uses-feature
+11-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:77:2-79:30
+12        android:name="android.hardware.telephony"
+12-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:78:3-44
+13        android:required="false" />
+13-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:79:3-27
+14
+15    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+15-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:81:2-72
+15-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:81:19-69
+16    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+16-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:82:2-81
+16-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:82:19-78
+17    <uses-permission android:name="android.permission.VIBRATE" />
+17-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:83:2-63
+17-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:83:19-60
+18    <uses-permission
+18-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:84:2-85:32
+19        android:name="android.permission.READ_EXTERNAL_STORAGE"
+19-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:84:19-74
+20        android:maxSdkVersion="32" />
+20-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:85:3-29
+21    <uses-permission
+21-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:86:2-87:32
+22        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+22-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:86:19-75
+23        android:maxSdkVersion="32" />
+23-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:87:3-29
+24    <uses-permission android:name="android.permission.GET_TASKS" />
+24-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:88:2-65
+24-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:88:19-62
+25    <uses-permission android:name="android.permission.WAKE_LOCK" />
+25-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:89:2-65
+25-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:89:19-62
+26    <uses-permission android:name="android.permission.INTERNET" />
+26-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:90:2-64
+26-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:90:19-61
+27    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+27-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:91:2-76
+27-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:91:19-73
+28    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+28-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:92:2-73
+28-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:92:19-70
+29    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+29-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:93:2-73
+29-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:93:19-70
+30    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+30-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:94:2-78
+30-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:94:19-75
+31
+32    <!-- 생략 -->
+33    <uses-feature
+33-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:99:2-85
+34        android:name="android.hardware.camera.any"
+34-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:99:16-58
+35        android:required="false" />
+35-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:99:59-83
+36
+37    <uses-permission android:name="android.permission.CAMERA" />
+37-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:100:2-61
+37-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:100:19-59
+38    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+38-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:101:2-67
+38-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:101:19-65
+39    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+39-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:102:2-77
+39-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:102:19-74
+40
+41    <uses-feature android:name="android.hardware.camera" />
+41-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:9:5-60
+41-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:9:19-57
+42
+43    <uses-permission android:name="android.permission.FLASHLIGHT" />
+43-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:13:5-69
+43-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:13:22-66
+44    <!--
+45    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+46    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+47    -->
+48    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+48-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:18:5-75
+48-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:18:22-72
+49    <uses-permission android:name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED" />
+49-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:19:5-90
+49-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:19:22-87
+50
+51    <queries>
+51-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:21:5-25:15
+52        <intent>
+52-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:22:9-24:18
+53            <action android:name="android.media.action.IMAGE_CAPTURE" />
+53-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:23:13-73
+53-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:23:21-70
+54        </intent>
+55    </queries>
+56
+57    <uses-feature
+57-->[m_plugin_location.aar] /Users/euncheok/.gradle/caches/8.13/transforms/626e6c6a0d752737d98b756cb8e5d8b5/transformed/jetified-m_plugin_location/AndroidManifest.xml:12:5-14:36
+58        android:name="android.hardware.location"
+58-->[m_plugin_location.aar] /Users/euncheok/.gradle/caches/8.13/transforms/626e6c6a0d752737d98b756cb8e5d8b5/transformed/jetified-m_plugin_location/AndroidManifest.xml:13:9-49
+59        android:required="false" />
+59-->[m_plugin_location.aar] /Users/euncheok/.gradle/caches/8.13/transforms/626e6c6a0d752737d98b756cb8e5d8b5/transformed/jetified-m_plugin_location/AndroidManifest.xml:14:9-33
+60    <uses-feature
+60-->[m_plugin_location.aar] /Users/euncheok/.gradle/caches/8.13/transforms/626e6c6a0d752737d98b756cb8e5d8b5/transformed/jetified-m_plugin_location/AndroidManifest.xml:15:5-17:36
+61        android:name="android.hardware.location.gps"
+61-->[m_plugin_location.aar] /Users/euncheok/.gradle/caches/8.13/transforms/626e6c6a0d752737d98b756cb8e5d8b5/transformed/jetified-m_plugin_location/AndroidManifest.xml:16:9-53
+62        android:required="false" />
+62-->[m_plugin_location.aar] /Users/euncheok/.gradle/caches/8.13/transforms/626e6c6a0d752737d98b756cb8e5d8b5/transformed/jetified-m_plugin_location/AndroidManifest.xml:17:9-33
+63    <uses-feature
+63-->[m_plugin_location.aar] /Users/euncheok/.gradle/caches/8.13/transforms/626e6c6a0d752737d98b756cb8e5d8b5/transformed/jetified-m_plugin_location/AndroidManifest.xml:18:5-20:36
+64        android:name="android.hardware.location.network"
+64-->[m_plugin_location.aar] /Users/euncheok/.gradle/caches/8.13/transforms/626e6c6a0d752737d98b756cb8e5d8b5/transformed/jetified-m_plugin_location/AndroidManifest.xml:19:9-57
+65        android:required="false" />
+65-->[m_plugin_location.aar] /Users/euncheok/.gradle/caches/8.13/transforms/626e6c6a0d752737d98b756cb8e5d8b5/transformed/jetified-m_plugin_location/AndroidManifest.xml:20:9-33
+66    <uses-feature
+66-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:28:5-30:36
+67        android:name="android.hardware.camera.front"
+67-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:29:9-53
+68        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+68-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:30:9-33
+69    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+70    <uses-feature
+70-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:33:5-35:36
+71        android:name="android.hardware.camera.autofocus"
+71-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:34:9-57
+72        android:required="false" />
+72-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:35:9-33
+73    <uses-feature
+73-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:36:5-38:36
+74        android:name="android.hardware.camera.flash"
+74-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:37:9-53
+75        android:required="false" />
+75-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:38:9-33
+76    <uses-feature
+76-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:39:5-41:36
+77        android:name="android.hardware.screen.landscape"
+77-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:40:9-57
+78        android:required="false" />
+78-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:41:9-33
+79    <uses-feature
+79-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:42:5-44:36
+80        android:name="android.hardware.wifi"
+80-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:43:9-45
+81        android:required="false" />
+81-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:44:9-33
+82
+83    <permission
+83-->[androidx.core:core:1.9.0] /Users/euncheok/.gradle/caches/8.13/transforms/552f2e1b9fdfd30015801c7c789c05b9/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+84        android:name="mcore.edu.qwer.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+84-->[androidx.core:core:1.9.0] /Users/euncheok/.gradle/caches/8.13/transforms/552f2e1b9fdfd30015801c7c789c05b9/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+85        android:protectionLevel="signature" />
+85-->[androidx.core:core:1.9.0] /Users/euncheok/.gradle/caches/8.13/transforms/552f2e1b9fdfd30015801c7c789c05b9/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+86
+87    <uses-permission android:name="mcore.edu.qwer.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- requestLegacyExternalStorage 관련 오류 발생시, Properties 에서 Android의 project Build Target을  Android 10 으로 지정 하거나, requestLegacyExternalStorage 를 삭제 -->
+87-->[androidx.core:core:1.9.0] /Users/euncheok/.gradle/caches/8.13/transforms/552f2e1b9fdfd30015801c7c789c05b9/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+87-->[androidx.core:core:1.9.0] /Users/euncheok/.gradle/caches/8.13/transforms/552f2e1b9fdfd30015801c7c789c05b9/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+88    <application
+88-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:5:2-75:16
+89        android:name="mcore.mobile.app.implementation.ExtendApplication"
+89-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:6:3-67
+90        android:allowBackup="false"
+90-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:7:3-30
+91        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+91-->[androidx.core:core:1.9.0] /Users/euncheok/.gradle/caches/8.13/transforms/552f2e1b9fdfd30015801c7c789c05b9/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+92        android:debuggable="true"
+93        android:enableOnBackInvokedCallback="true"
+93-->[m_core.aar] /Users/euncheok/.gradle/caches/8.13/transforms/bdb1aa01fc5c05bb5d6b94ee6e005638/transformed/jetified-m_core/AndroidManifest.xml:9:18-60
+94        android:extractNativeLibs="true"
+95        android:icon="@mipmap/ic_launcher"
+95-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:8:3-37
+96        android:label="@string/app_name"
+96-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:9:3-35
+97        android:networkSecurityConfig="@xml/network_security_config"
+97-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:12:3-63
+98        android:requestLegacyExternalStorage="true"
+98-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:11:3-46
+99        android:resizeableActivity="true"
+99-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:14:3-36
+100        android:testOnly="true"
+101        android:theme="@style/Theme.AppCompat.NoActionBar"
+101-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:10:3-53
+102        android:usesCleartextTraffic="true" >
+102-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:13:3-38
+103
+104        <!-- 에러 발생시, ${applicationId} 를 packagename 으로 변경 -->
+105        <provider
+106            android:name="androidx.core.content.FileProvider"
+106-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:17:4-53
+107            android:authorities="mcore.edu.qwer.provider"
+107-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:18:4-51
+108            android:exported="false"
+108-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:19:4-28
+109            android:grantUriPermissions="true" >
+109-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:20:4-38
+110            <meta-data
+110-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:21:4-23:52
+111                android:name="android.support.FILE_PROVIDER_PATHS"
+111-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:22:5-55
+112                android:resource="@xml/mcore_provider_paths" />
+112-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:23:5-49
+113        </provider>
+114
+115        <activity
+115-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:26:3-34:14
+116            android:name="mcore.mobile.app.Startup"
+116-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:27:4-43
+117            android:exported="true"
+117-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:28:4-27
+118            android:theme="@style/Theme.AppCompat.NoActionBar" >
+118-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:29:4-54
+119            <intent-filter>
+119-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:30:4-33:20
+120                <action android:name="android.intent.action.MAIN" />
+120-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:31:5-57
+120-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:31:13-54
+121
+122                <category android:name="android.intent.category.LAUNCHER" />
+122-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:32:5-65
+122-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:32:15-62
+123            </intent-filter>
+124        </activity>
+125        <activity
+125-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:35:3-38:56
+126            android:name="mcore.mobile.app.BaseActivity"
+126-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:36:4-48
+127            android:configChanges="locale|keyboardHidden|orientation|screenSize"
+127-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:37:4-72
+128            android:imeOptions="actionSend|flagNoEnterAction" />
+128-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:38:4-53
+129        <activity
+129-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:39:3-41:75
+130            android:name="mcore.mobile.app.samples.activity.BatchTempActivity"
+130-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:40:4-70
+131            android:configChanges="locale|keyboardHidden|orientation|screenSize" />
+131-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:41:4-72
+132        <activity
+132-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:42:3-44:75
+133            android:name="mcore.mobile.app.samples.activity.ImageDetailsActivity"
+133-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:43:4-73
+134            android:configChanges="locale|keyboardHidden|orientation|screenSize" />
+134-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:44:4-72
+135        <activity
+135-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:45:3-47:75
+136            android:name="mcore.mobile.app.samples.activity.ImageList1Activity"
+136-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:46:4-71
+137            android:configChanges="locale|keyboardHidden|orientation|screenSize" />
+137-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:47:4-72
+138        <activity
+138-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:48:3-50:75
+139            android:name="mcore.mobile.app.samples.activity.ImageList2Activity"
+139-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:49:4-71
+140            android:configChanges="locale|keyboardHidden|orientation|screenSize" />
+140-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:50:4-72
+141        <activity
+141-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:51:3-53:75
+142            android:name="mcore.mobile.app.samples.activity.SampleActivity"
+142-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:52:4-67
+143            android:configChanges="locale|keyboardHidden|orientation|screenSize" />
+143-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:53:4-72
+144        <activity
+144-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:54:3-56:75
+145            android:name="mcore.mobile.app.samples.activity.SampleActivity2"
+145-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:55:4-68
+146            android:configChanges="locale|keyboardHidden|orientation|screenSize" />
+146-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:56:4-72
+147        <activity
+147-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:57:3-59:75
+148            android:name="mcore.mobile.app.samples.activity.SampleNativeListActivity"
+148-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:58:4-77
+149            android:configChanges="locale|keyboardHidden|orientation|screenSize" />
+149-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:59:4-72
+150        <activity
+150-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:60:3-62:75
+151            android:name="mcore.mobile.app.samples.activity.StartActivity"
+151-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:61:4-66
+152            android:configChanges="locale|keyboardHidden|orientation|screenSize" />
+152-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:62:4-72
+153        <activity
+153-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:63:3-66:56
+154            android:name="m.client.android.library.core.view.MainActivity"
+154-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:64:4-66
+155            android:configChanges="locale|keyboardHidden|orientation|screenSize"
+155-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:65:4-72
+156            android:enableOnBackInvokedCallback="true"
+156-->[m_core.aar] /Users/euncheok/.gradle/caches/8.13/transforms/bdb1aa01fc5c05bb5d6b94ee6e005638/transformed/jetified-m_core/AndroidManifest.xml:13:13-55
+157            android:imeOptions="actionSend|flagNoEnterAction"
+157-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:66:4-53
+158            android:theme="@style/Theme.AppCompat.DayNight" />
+158-->[m_core.aar] /Users/euncheok/.gradle/caches/8.13/transforms/bdb1aa01fc5c05bb5d6b94ee6e005638/transformed/jetified-m_core/AndroidManifest.xml:15:13-60
+159
+160        <provider
+161            android:name="m.client.android.library.core.managers.LocalFileContentProvider"
+161-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:69:4-82
+162            android:authorities="mcore.edu.qwer" />
+162-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:70:4-42
+163
+164        <uses-library
+164-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:71:3-73:31
+165            android:name="org.apache.http.legacy"
+165-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:72:4-41
+166            android:required="false" />
+166-->/Users/euncheok/FullStack/android/app/src/main/AndroidManifest.xml:73:4-28
+167
+168        <activity
+168-->[m_core.aar] /Users/euncheok/.gradle/caches/8.13/transforms/bdb1aa01fc5c05bb5d6b94ee6e005638/transformed/jetified-m_core/AndroidManifest.xml:16:9-18:40
+169            android:name="m.client.android.library.core.view.ComposeActivity"
+169-->[m_core.aar] /Users/euncheok/.gradle/caches/8.13/transforms/bdb1aa01fc5c05bb5d6b94ee6e005638/transformed/jetified-m_core/AndroidManifest.xml:17:13-78
+170            android:exported="false" />
+170-->[m_core.aar] /Users/euncheok/.gradle/caches/8.13/transforms/bdb1aa01fc5c05bb5d6b94ee6e005638/transformed/jetified-m_core/AndroidManifest.xml:18:13-37
+171        <activity
+171-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:28:9-30:73
+172            android:name="m.client.library.addon.media.AudioRecoderActivity"
+172-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:29:13-77
+173            android:configChanges="locale|keyboardHidden|orientation" />
+173-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:30:13-70
+174        <activity
+174-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:31:9-34:66
+175            android:name="m.client.library.addon.media.MediaPlayActivity"
+175-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:32:13-74
+176            android:configChanges="keyboardHidden|orientation|screenSize"
+176-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:33:13-74
+177            android:theme="@style/Theme.AppCompat.NoActionBar" />
+177-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:34:13-63
+178        <activity
+178-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:35:9-38:69
+179            android:name="m.client.library.addon.media.crop.CropImageActivity"
+179-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:36:13-79
+180            android:configChanges="keyboardHidden|orientation|screenSize"
+180-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:37:13-74
+181            android:theme="@android:style/Theme.Black.NoTitleBar" />
+181-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:38:13-66
+182        <activity
+182-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:39:9-41:66
+183            android:name="m.client.library.addon.media.ui_picker.MediaPickerActivity"
+183-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:40:13-86
+184            android:theme="@style/Theme.AppCompat.NoActionBar" /> <!-- 페이징 처리된 화면 -->
+184-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:41:13-63
+185        <activity
+185-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:44:9-46:66
+186            android:name="m.client.library.addon.media.ui_picker.MediaPickerPagingActivity"
+186-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:45:13-92
+187            android:theme="@style/Theme.AppCompat.NoActionBar" />
+187-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:46:13-63
+188        <activity
+188-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:47:9-49:66
+189            android:name="m.client.library.addon.media.ui_picker.MediaPreviewActivity"
+189-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:48:13-87
+190            android:theme="@style/Theme.AppCompat.NoActionBar" />
+190-->[m_addon_media.aar] /Users/euncheok/.gradle/caches/8.13/transforms/b38179203bcea36a06ccc9f249c028c6/transformed/jetified-m_addon_media/AndroidManifest.xml:49:13-63
+191
+192        <meta-data
+192-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:28:9-30:42
+193            android:name="com.google.mlkit.vision.DEPENDENCIES"
+193-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:29:13-64
+194            android:value="barcode_ui" />
+194-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:30:13-39
+195
+196        <activity
+196-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:32:9-38:63
+197            android:name="com.google.zxing.client.android.QRScannActivity"
+197-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:33:13-75
+198            android:clearTaskOnLaunch="true"
+198-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:34:13-45
+199            android:configChanges="locale|orientation|keyboardHidden|screenSize"
+199-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:35:13-81
+200            android:stateNotNeeded="true"
+200-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:36:13-42
+201            android:theme="@style/Theme.AppCompat.NoActionBar"
+201-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:37:13-63
+202            android:windowSoftInputMode="stateAlwaysHidden" />
+202-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:38:13-60
+203        <activity
+203-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:39:9-45:63
+204            android:name="com.google.zxing.client.android.CaptureActivity"
+204-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:40:13-75
+205            android:clearTaskOnLaunch="true"
+205-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:41:13-45
+206            android:configChanges="locale|orientation|keyboardHidden|screenSize"
+206-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:42:13-81
+207            android:stateNotNeeded="true"
+207-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:43:13-42
+208            android:theme="@style/Theme.AppCompat.NoActionBar"
+208-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:44:13-63
+209            android:windowSoftInputMode="stateAlwaysHidden" />
+209-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:45:13-60
+210        <activity
+210-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:46:9-54:63
+211            android:name="com.google.zxing.client.android.BarcodeActivity"
+211-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:47:13-75
+212            android:clearTaskOnLaunch="true"
+212-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:48:13-45
+213            android:configChanges="locale|orientation|keyboardHidden|screenSize"
+213-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:49:13-81
+214            android:exported="false"
+214-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:50:13-37
+215            android:screenOrientation="portrait"
+215-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:51:13-49
+216            android:stateNotNeeded="true"
+216-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:52:13-42
+217            android:theme="@style/Theme.AppCompat.NoActionBar"
+217-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:53:13-63
+218            android:windowSoftInputMode="stateAlwaysHidden" />
+218-->[m_plugin_qr.aar] /Users/euncheok/.gradle/caches/8.13/transforms/a2fa8f106f31b322effd64a0b5db0b15/transformed/jetified-m_plugin_qr/AndroidManifest.xml:54:13-60
+219        <activity
+219-->[m_plugin_viewer.aar] /Users/euncheok/.gradle/caches/8.13/transforms/84e39e4c66381deaff0940cd92b177f3/transformed/jetified-m_plugin_viewer/AndroidManifest.xml:10:9-12:73
+220            android:name="m.client.library.plugin.viewer.DocViewerActivity"
+220-->[m_plugin_viewer.aar] /Users/euncheok/.gradle/caches/8.13/transforms/84e39e4c66381deaff0940cd92b177f3/transformed/jetified-m_plugin_viewer/AndroidManifest.xml:11:13-76
+221            android:configChanges="locale|keyboardHidden|orientation" />
+221-->[m_plugin_viewer.aar] /Users/euncheok/.gradle/caches/8.13/transforms/84e39e4c66381deaff0940cd92b177f3/transformed/jetified-m_plugin_viewer/AndroidManifest.xml:12:13-70
+222        <activity
+222-->[m_plugin_viewer.aar] /Users/euncheok/.gradle/caches/8.13/transforms/84e39e4c66381deaff0940cd92b177f3/transformed/jetified-m_plugin_viewer/AndroidManifest.xml:13:9-16:58
+223            android:name="m.client.library.plugin.viewer.MuPDFActivity"
+223-->[m_plugin_viewer.aar] /Users/euncheok/.gradle/caches/8.13/transforms/84e39e4c66381deaff0940cd92b177f3/transformed/jetified-m_plugin_viewer/AndroidManifest.xml:14:13-72
+224            android:configChanges="locale|keyboardHidden|orientation"
+224-->[m_plugin_viewer.aar] /Users/euncheok/.gradle/caches/8.13/transforms/84e39e4c66381deaff0940cd92b177f3/transformed/jetified-m_plugin_viewer/AndroidManifest.xml:15:13-70
+225            android:windowSoftInputMode="adjustResize" />
+225-->[m_plugin_viewer.aar] /Users/euncheok/.gradle/caches/8.13/transforms/84e39e4c66381deaff0940cd92b177f3/transformed/jetified-m_plugin_viewer/AndroidManifest.xml:16:13-55
+226        <!--
+227        Service for holding metadata. Cannot be instantiated.
+228        Metadata will be merged from other manifests.
+229        -->
+230        <service
+230-->[androidx.camera:camera-core:1.4.2] /Users/euncheok/.gradle/caches/8.13/transforms/ec152ffb44def628633e5959cebc237a/transformed/jetified-camera-core-1.4.2/AndroidManifest.xml:29:9-33:78
+231            android:name="androidx.camera.core.impl.MetadataHolderService"
+231-->[androidx.camera:camera-core:1.4.2] /Users/euncheok/.gradle/caches/8.13/transforms/ec152ffb44def628633e5959cebc237a/transformed/jetified-camera-core-1.4.2/AndroidManifest.xml:30:13-75
+232            android:enabled="false"
+232-->[androidx.camera:camera-core:1.4.2] /Users/euncheok/.gradle/caches/8.13/transforms/ec152ffb44def628633e5959cebc237a/transformed/jetified-camera-core-1.4.2/AndroidManifest.xml:31:13-36
+233            android:exported="false" >
+233-->[androidx.camera:camera-core:1.4.2] /Users/euncheok/.gradle/caches/8.13/transforms/ec152ffb44def628633e5959cebc237a/transformed/jetified-camera-core-1.4.2/AndroidManifest.xml:32:13-37
+234            <meta-data
+234-->[androidx.camera:camera-camera2:1.4.2] /Users/euncheok/.gradle/caches/8.13/transforms/9d94ec2aa98feda9a28ec29d2db8ee0f/transformed/jetified-camera-camera2-1.4.2/AndroidManifest.xml:30:13-32:89
+235                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+235-->[androidx.camera:camera-camera2:1.4.2] /Users/euncheok/.gradle/caches/8.13/transforms/9d94ec2aa98feda9a28ec29d2db8ee0f/transformed/jetified-camera-camera2-1.4.2/AndroidManifest.xml:31:17-103
+236                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+236-->[androidx.camera:camera-camera2:1.4.2] /Users/euncheok/.gradle/caches/8.13/transforms/9d94ec2aa98feda9a28ec29d2db8ee0f/transformed/jetified-camera-camera2-1.4.2/AndroidManifest.xml:32:17-86
+237        </service>
+238        <service
+238-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.1] /Users/euncheok/.gradle/caches/8.13/transforms/444a0e1039bf7992524c3a51a34cf18a/transformed/jetified-play-services-mlkit-barcode-scanning-18.3.1/AndroidManifest.xml:9:9-15:19
+239            android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService"
+239-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.1] /Users/euncheok/.gradle/caches/8.13/transforms/444a0e1039bf7992524c3a51a34cf18a/transformed/jetified-play-services-mlkit-barcode-scanning-18.3.1/AndroidManifest.xml:10:13-91
+240            android:directBootAware="true"
+240-->[com.google.mlkit:common:18.11.0] /Users/euncheok/.gradle/caches/8.13/transforms/8840de013c267dbad3691bcb02b6af0a/transformed/jetified-common-18.11.0/AndroidManifest.xml:17:13-43
+241            android:exported="false" >
+241-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.1] /Users/euncheok/.gradle/caches/8.13/transforms/444a0e1039bf7992524c3a51a34cf18a/transformed/jetified-play-services-mlkit-barcode-scanning-18.3.1/AndroidManifest.xml:11:13-37
+242            <meta-data
+242-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.1] /Users/euncheok/.gradle/caches/8.13/transforms/444a0e1039bf7992524c3a51a34cf18a/transformed/jetified-play-services-mlkit-barcode-scanning-18.3.1/AndroidManifest.xml:12:13-14:85
+243                android:name="com.google.firebase.components:com.google.mlkit.vision.barcode.internal.BarcodeRegistrar"
+243-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.1] /Users/euncheok/.gradle/caches/8.13/transforms/444a0e1039bf7992524c3a51a34cf18a/transformed/jetified-play-services-mlkit-barcode-scanning-18.3.1/AndroidManifest.xml:13:17-120
+244                android:value="com.google.firebase.components.ComponentRegistrar" />
+244-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.1] /Users/euncheok/.gradle/caches/8.13/transforms/444a0e1039bf7992524c3a51a34cf18a/transformed/jetified-play-services-mlkit-barcode-scanning-18.3.1/AndroidManifest.xml:14:17-82
+245            <meta-data
+245-->[com.google.mlkit:vision-common:17.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/29ee8421a2948a7e68bc838c001c9d1f/transformed/jetified-vision-common-17.3.0/AndroidManifest.xml:12:13-14:85
+246                android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar"
+246-->[com.google.mlkit:vision-common:17.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/29ee8421a2948a7e68bc838c001c9d1f/transformed/jetified-vision-common-17.3.0/AndroidManifest.xml:13:17-124
+247                android:value="com.google.firebase.components.ComponentRegistrar" />
+247-->[com.google.mlkit:vision-common:17.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/29ee8421a2948a7e68bc838c001c9d1f/transformed/jetified-vision-common-17.3.0/AndroidManifest.xml:14:17-82
+248            <meta-data
+248-->[com.google.mlkit:common:18.11.0] /Users/euncheok/.gradle/caches/8.13/transforms/8840de013c267dbad3691bcb02b6af0a/transformed/jetified-common-18.11.0/AndroidManifest.xml:20:13-22:85
+249                android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar"
+249-->[com.google.mlkit:common:18.11.0] /Users/euncheok/.gradle/caches/8.13/transforms/8840de013c267dbad3691bcb02b6af0a/transformed/jetified-common-18.11.0/AndroidManifest.xml:21:17-120
+250                android:value="com.google.firebase.components.ComponentRegistrar" />
+250-->[com.google.mlkit:common:18.11.0] /Users/euncheok/.gradle/caches/8.13/transforms/8840de013c267dbad3691bcb02b6af0a/transformed/jetified-common-18.11.0/AndroidManifest.xml:22:17-82
+251        </service>
+252
+253        <provider
+253-->[com.google.mlkit:common:18.11.0] /Users/euncheok/.gradle/caches/8.13/transforms/8840de013c267dbad3691bcb02b6af0a/transformed/jetified-common-18.11.0/AndroidManifest.xml:9:9-13:38
+254            android:name="com.google.mlkit.common.internal.MlKitInitProvider"
+254-->[com.google.mlkit:common:18.11.0] /Users/euncheok/.gradle/caches/8.13/transforms/8840de013c267dbad3691bcb02b6af0a/transformed/jetified-common-18.11.0/AndroidManifest.xml:10:13-78
+255            android:authorities="mcore.edu.qwer.mlkitinitprovider"
+255-->[com.google.mlkit:common:18.11.0] /Users/euncheok/.gradle/caches/8.13/transforms/8840de013c267dbad3691bcb02b6af0a/transformed/jetified-common-18.11.0/AndroidManifest.xml:11:13-69
+256            android:exported="false"
+256-->[com.google.mlkit:common:18.11.0] /Users/euncheok/.gradle/caches/8.13/transforms/8840de013c267dbad3691bcb02b6af0a/transformed/jetified-common-18.11.0/AndroidManifest.xml:12:13-37
+257            android:initOrder="99" />
+257-->[com.google.mlkit:common:18.11.0] /Users/euncheok/.gradle/caches/8.13/transforms/8840de013c267dbad3691bcb02b6af0a/transformed/jetified-common-18.11.0/AndroidManifest.xml:13:13-35
+258
+259        <activity
+259-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:47:9-53:63
+260            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+260-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:48:13-74
+261            android:clearTaskOnLaunch="true"
+261-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:49:13-45
+262            android:screenOrientation="sensorLandscape"
+262-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:50:13-56
+263            android:stateNotNeeded="true"
+263-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:51:13-42
+264            android:theme="@style/zxing_CaptureTheme"
+264-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:52:13-54
+265            android:windowSoftInputMode="stateAlwaysHidden" />
+265-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/euncheok/.gradle/caches/8.13/transforms/8c121dc9d95fb0bbb4f32e4453b98503/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:53:13-60
+266        <activity
+266-->[com.google.android.gms:play-services-base:18.5.0] /Users/euncheok/.gradle/caches/8.13/transforms/f1fda0465b15f97341e3fea16b7b890e/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:9-173
+267            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+267-->[com.google.android.gms:play-services-base:18.5.0] /Users/euncheok/.gradle/caches/8.13/transforms/f1fda0465b15f97341e3fea16b7b890e/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:19-85
+268            android:exported="false"
+268-->[com.google.android.gms:play-services-base:18.5.0] /Users/euncheok/.gradle/caches/8.13/transforms/f1fda0465b15f97341e3fea16b7b890e/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:146-170
+269            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+269-->[com.google.android.gms:play-services-base:18.5.0] /Users/euncheok/.gradle/caches/8.13/transforms/f1fda0465b15f97341e3fea16b7b890e/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:86-145
+270
+271        <meta-data
+271-->[com.google.android.gms:play-services-basement:18.4.0] /Users/euncheok/.gradle/caches/8.13/transforms/fff4aa66ecbb3bf7ad226cdbca887ce4/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
+272            android:name="com.google.android.gms.version"
+272-->[com.google.android.gms:play-services-basement:18.4.0] /Users/euncheok/.gradle/caches/8.13/transforms/fff4aa66ecbb3bf7ad226cdbca887ce4/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
+273            android:value="@integer/google_play_services_version" />
+273-->[com.google.android.gms:play-services-basement:18.4.0] /Users/euncheok/.gradle/caches/8.13/transforms/fff4aa66ecbb3bf7ad226cdbca887ce4/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
+274
+275        <provider
+275-->[androidx.emoji2:emoji2:1.2.0] /Users/euncheok/.gradle/caches/8.13/transforms/6be7a736ea2ccc37e216583c405ff20f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+276            android:name="androidx.startup.InitializationProvider"
+276-->[androidx.emoji2:emoji2:1.2.0] /Users/euncheok/.gradle/caches/8.13/transforms/6be7a736ea2ccc37e216583c405ff20f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+277            android:authorities="mcore.edu.qwer.androidx-startup"
+277-->[androidx.emoji2:emoji2:1.2.0] /Users/euncheok/.gradle/caches/8.13/transforms/6be7a736ea2ccc37e216583c405ff20f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+278            android:exported="false" >
+278-->[androidx.emoji2:emoji2:1.2.0] /Users/euncheok/.gradle/caches/8.13/transforms/6be7a736ea2ccc37e216583c405ff20f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+279            <meta-data
+279-->[androidx.emoji2:emoji2:1.2.0] /Users/euncheok/.gradle/caches/8.13/transforms/6be7a736ea2ccc37e216583c405ff20f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+280                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+280-->[androidx.emoji2:emoji2:1.2.0] /Users/euncheok/.gradle/caches/8.13/transforms/6be7a736ea2ccc37e216583c405ff20f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+281                android:value="androidx.startup" />
+281-->[androidx.emoji2:emoji2:1.2.0] /Users/euncheok/.gradle/caches/8.13/transforms/6be7a736ea2ccc37e216583c405ff20f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+282            <meta-data
+282-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/euncheok/.gradle/caches/8.13/transforms/f085e8d76a3b31b3d1865d26fc311e3b/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+283                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+283-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/euncheok/.gradle/caches/8.13/transforms/f085e8d76a3b31b3d1865d26fc311e3b/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+284                android:value="androidx.startup" />
+284-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/euncheok/.gradle/caches/8.13/transforms/f085e8d76a3b31b3d1865d26fc311e3b/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+285        </provider>
+286
+287        <service
+287-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/euncheok/.gradle/caches/8.13/transforms/08441057b4c8adda41aafb1660cda3bb/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:29:9-35:19
+288            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+288-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/euncheok/.gradle/caches/8.13/transforms/08441057b4c8adda41aafb1660cda3bb/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:30:13-103
+289            android:exported="false" >
+289-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/euncheok/.gradle/caches/8.13/transforms/08441057b4c8adda41aafb1660cda3bb/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:31:13-37
+290            <meta-data
+290-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/euncheok/.gradle/caches/8.13/transforms/08441057b4c8adda41aafb1660cda3bb/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:32:13-34:39
+291                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+291-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/euncheok/.gradle/caches/8.13/transforms/08441057b4c8adda41aafb1660cda3bb/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:33:17-94
+292                android:value="cct" />
+292-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/euncheok/.gradle/caches/8.13/transforms/08441057b4c8adda41aafb1660cda3bb/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:34:17-36
+293        </service>
+294        <service
+294-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/euncheok/.gradle/caches/8.13/transforms/4a37a006e64422265e90220abe6668a3/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:26:9-30:19
+295            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+295-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/euncheok/.gradle/caches/8.13/transforms/4a37a006e64422265e90220abe6668a3/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:27:13-117
+296            android:exported="false"
+296-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/euncheok/.gradle/caches/8.13/transforms/4a37a006e64422265e90220abe6668a3/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:28:13-37
+297            android:permission="android.permission.BIND_JOB_SERVICE" >
+297-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/euncheok/.gradle/caches/8.13/transforms/4a37a006e64422265e90220abe6668a3/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:29:13-69
+298        </service>
+299
+300        <receiver
+300-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/euncheok/.gradle/caches/8.13/transforms/4a37a006e64422265e90220abe6668a3/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:32:9-34:40
+301            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+301-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/euncheok/.gradle/caches/8.13/transforms/4a37a006e64422265e90220abe6668a3/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:33:13-132
+302            android:exported="false" />
+302-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/euncheok/.gradle/caches/8.13/transforms/4a37a006e64422265e90220abe6668a3/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:34:13-37
+303    </application>
+304
+305</manifest>
