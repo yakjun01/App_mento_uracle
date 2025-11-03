@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=360, user-scalable=no" />
+        <title>회원가입 (3/3) - SafeWalk</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@700;900&display=swap" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            as="style"
+            crossorigin
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+        />
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <div id="app-container">
+            <header class="app-header">
+                <a href="/signup-step2" class="btn-icon">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <h2 class="header-title">회원가입</h2>
+                <span class="header-step">3 / 3</span>
+            </header>
+
+            <main class="app-content">
+                <form action="/signup-step3" method="post">
+                    <label class="input-label" for="guardian-name">보호자 이름</label>
+                    <input type="text" id="guardian-name" name="pName" placeholder="보호자 이름을 입력하세요." th:value="${userProfile.pName}" />
+
+                    <label class="input-label" for="relationship">보호자와의 관계</label>
+                    <select id="relationship" name="relation" class="input-select">
+                        <option value="" disabled selected>보호자와의 관계를 선택하세요</option>
+                        <option value="father" th:selected="${userProfile.relation == 'father'}">부</option>
+                        <option value="mother" th:selected="${userProfile.relation == 'mother'}">모</option>
+                        <option value="sibling" th:selected="${userProfile.relation == 'sibling'}">형제/자매</option>
+                        <option value="spouse" th:selected="${userProfile.relation == 'spouse'}">배우자</option>
+                        <option value="other" th:selected="${userProfile.relation == 'other'}">기타</option>
+                    </select>
+
+                    <label class="input-label" for="guardian-phone">보호자 전화번호</label>
+                    <input type="tel" id="guardian-phone" name="pPhoneNumber" placeholder="'-' 없이 숫자만 입력" th:value="${userProfile.pPhoneNumber}" />
+
+                    <div class="notice-text">
+                        <span>※ 위급 상황 시 보호자에게 연락하기 위해 정보가 필요합니다.</span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">가입 완료</button>
+                </form>
+            </main>
+        </div>
+
+        <div id="complete-modal" class="modal-overlay">
+            <div class="modal-content">
+                <p>가입이 완료되었습니다.</p>
+                <div class="modal-buttons-center">
+                    <a href="/" class="modal-button confirm">확인</a>
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/common.js"></script>
+    </body>
+</html>
