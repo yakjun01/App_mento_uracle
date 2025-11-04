@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=360, user-scalable=no" />
+        <title>설정 - SafeWalk</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@700;900&display=swap" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            as="style"
+            crossorigin
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+        />
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <div id="app-container" class="main-layout">
+            <header class="app-header">
+                <a th:href="@{'/main'}" class="btn-icon">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <h2 class="header-title">설정</h2>
+                <span class="header-placeholder"></span>
+            </header>
+
+            <main class="app-content">
+                <a th:href="@{'/change-password'}" class="settings-list-item">
+                    <span>비밀번호 변경</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+                <a th:href="@{'/delete-account'}" class="settings-list-item">
+                    <span>계정 탈퇴하기</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </main>
+
+            <div class="btn-layout-bottom">
+                <button type="button" data-modal-target="logout-modal" class="btn btn-secondary btn-bottom">
+                    로그아웃
+                </button>
+            </div>
+        </div>
+
+        <div id="logout-modal" class="modal-overlay">
+            <div class="modal-content">
+                <p>로그아웃 하시겠습니까?</p>
+                <div class="modal-buttons">
+                    <button class="modal-button cancel modal-close">취소</button>
+                    <a th:href="@{'/logout'}" class="modal-button confirm">로그아웃하기</a>
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/common.js"></script>
+    </body>
+</html>

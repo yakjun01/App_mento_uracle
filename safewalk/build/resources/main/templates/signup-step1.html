@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=360, user-scalable=no" />
+    <title>회원가입 (1/3) - SafeWalk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@700;900&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div id="app-container">
+      <header class="app-header">
+        <a href="/signup-cancel" class="btn-icon">
+          <i class="fas fa-arrow-left"></i>
+        </a>
+        <h2 class="header-title">회원가입</h2>
+        <span class="header-step">1 / 3</span>
+      </header>
+
+      <main class="app-content">
+        <form action="/signup-step1" method="post">
+          <label class="input-label" for="username">이름</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="이름을 입력하세요"
+            th:value="${userProfile.name}"
+          />
+
+          <label class="input-label" for="email">이메일 (아이디)</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="이메일을 입력하세요"
+            th:value="${userProfile.email}"
+          />
+          <div class="input-with-button">
+            <button type="button" id="check-email-button" class="btn btn-secondary btn-small">중복확인</button>
+          </div>
+          <p id="email-check-msg" style="font-size: 0.8rem; display: none; margin-top: 4px"></p>
+
+          <label class="input-label" for="password">비밀번호</label>
+          <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" />
+
+          <label class="input-label" for="password-confirm">비밀번호 확인</label>
+          <input type="password" id="password-confirm" placeholder="비밀번호 확인" />
+          <p id="password-error" style="color: red; font-size: 0.8rem; display: none; margin-top: 4px">
+            비밀번호가 일치하지 않습니다.
+          </p>
+
+          <button type="submit" class="btn btn-primary" style="margin-top: 20px">다음</button>
+        </form>
+      </main>
+    </div>
+    <script src="/js/signup-step1.js"></script>
+  </body>
+</html>
