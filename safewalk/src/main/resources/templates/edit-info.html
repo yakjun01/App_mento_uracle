@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=360, user-scalable=no" />
+        <title>내 정보 수정 - SafeWalk</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@700;900&display=swap" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            as="style"
+            crossorigin
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+        />
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <div id="app-container">
+            <header class="app-header">
+                <a th:href="@{'/my-info'}" class="btn-icon">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <h2 class="header-title">내 정보 수정</h2>
+                <button type="submit" form="edit-info-form" class="btn-icon text-button">저장</button>
+            </header>
+
+            <main class="app-content">
+                <form th:action="@{'/edit-info'}" th:object="${userProfile}" method="post" id="edit-info-form">
+                    <input type="hidden" th:field="*{id}" />
+
+                    <label class="input-label" for="name">이름</label>
+                    <input type="text" id="name" th:field="*{name}" />
+
+                    <label class="input-label" for="email">이메일 (ID)</label>
+                    <input type="email" id="email" th:field="*{email}" disabled />
+
+                    <label class="input-label" for="phone">전화번호</label>
+                    <input type="tel" id="phone" th:field="*{phoneNumber}" />
+
+                    <label class="input-label" for="birthdate">생년월일</label>
+                    <input type="date" id="birthdate" th:field="*{birthDay}" />
+
+                    <label class="input-label" for="address">주소</label>
+                    <input type="text" id="address" th:field="*{address}" />
+
+                    <label class="input-label" for="addressDetail">상세주소</label>
+                    <input type="text" id="addressDetail" th:field="*{addressDetail}" />
+
+                    <label class="input-label" for="bloodType">혈액형</label>
+                    <select id="bloodType" th:field="*{bloodType}" class="input-select">
+                        <option value="A">A형</option>
+                        <option value="B">B형</option>
+                        <option value="O">O형</option>
+                        <option value="AB">AB형</option>
+                    </select>
+
+                    <label class="input-label" for="chronicIllness">지병</label>
+                    <input type="text" id="chronicIllness" th:field="*{chronicIllness}" />
+
+                    <label class="input-label" for="medication">복용 약물</label>
+                    <input type="text" id="medication" th:field="*{medicine}" />
+
+                    <label class="input-label" for="etc">기타 사항</label>
+                    <input type="text" id="etc" th:field="*{etc}" />
+                </form>
+            </main>
+        </div>
+        <script src="/js/common.js"></script>
+    </body>
+</html>
