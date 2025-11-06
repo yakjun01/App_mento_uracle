@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=360, user-scalable=no" />
+        <title>아이디 찾기 - SafeWalk</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@700;900&display=swap" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            as="style"
+            crossorigin
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+        />
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <div id="app-container">
+            <header class="app-header">
+                <a href="index.html" class="btn-icon">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <h2 class="header-title">아이디 찾기</h2>
+                <span class="header-placeholder"></span>
+            </header>
+
+            <main class="app-content">
+                <form>
+                    <label class="input-label" for="email">이메일</label>
+                    <input
+                        type="email"
+                        id="email"
+                        class="input-field"
+                        placeholder="가입 시 등록한 이메일을 입력하세요"
+                    />
+
+                    <label class="input-label" for="phone">전화번호</label>
+                    <input type="tel" id="phone" class="input-field" placeholder="'-' 없이 숫자만 입력" />
+                </form>
+            </main>
+
+            <div class="btn-layout-bottom">
+                <a href="#" class="btn btn-primary btn-bottom">아이디 찾기</a>
+            </div>
+        </div>
+    </body>
+</html>

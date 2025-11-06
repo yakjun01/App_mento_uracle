@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=360, user-scalable=no" />
+    <title>계정 탈퇴 - SafeWalk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@700;900&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div id="app-container" class="main-layout">
+      <header class="app-header">
+        <a th:href="@{'/settings'}" class="btn-icon">
+          <i class="fas fa-arrow-left"></i>
+        </a>
+        <h2 class="header-title">계정 탈퇴</h2>
+        <span class="header-placeholder"></span>
+      </header>
+
+      <main class="app-content">
+        <form action="/delete-account" method="post" id="delete-account-form">
+          <p th:if="${error}" th:text="${error}" style="color: red; text-align: center; margin-bottom: 1rem"></p>
+          <label class="input-label" for="current-password">현재 비밀번호</label>
+          <input
+            type="password"
+            id="current-password"
+            name="password"
+            placeholder="계정 탈퇴를 위해 비밀번호를 입력하세요"
+          />
+
+          <div class="notice-text">
+            <span>※ 탈퇴 시 모든 정보가 삭제되며 복구할 수 없습니다.</span>
+          </div>
+        </form>
+      </main>
+
+      <div class="btn-layout-bottom">
+        <button type="button" data-modal-target="delete-confirm-modal" class="btn btn-danger btn-bottom">
+          탈퇴하기
+        </button>
+      </div>
+    </div>
+
+    <div id="delete-confirm-modal" class="modal-overlay">
+      <div class="modal-content">
+        <p>정말 탈퇴하시겠습니까?</p>
+        <div class="modal-buttons">
+          <button class="modal-button cancel modal-close">아니요</button>
+          <button type="button" id="confirm-delete-button" class="modal-button confirm-danger">예 (탈퇴)</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/delete-account.js"></script>
+  </body>
+</html>
