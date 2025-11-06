@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=360, user-scalable=no" />
+        <title>회원가입 - SafeWalk</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@700;900&display=swap" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            as="style"
+            crossorigin
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+        />
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <div id="app-container">
+            <header class="app-header">
+                <a href="#" class="btn-icon back-button" style="visibility: hidden;">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <h2 class="header-title">회원가입</h2>
+                <span class="header-step"></span>
+            </header>
+            <main id="signup-main-content" class="app-content">
+                <!-- Dynamic content will be loaded here -->
+            </main>
+        </div>
+
+        <div id="complete-modal" class="modal-overlay">
+            <div class="modal-content">
+                <p>가입이 완료되었습니다.</p>
+                <div class="modal-buttons-center">
+                    <a href="/" class="modal-button confirm">확인</a>
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/signup.js"></script>
+    </body>
+</html>
