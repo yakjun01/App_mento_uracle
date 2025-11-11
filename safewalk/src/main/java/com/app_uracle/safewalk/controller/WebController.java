@@ -34,6 +34,11 @@ public class WebController {
 
     @GetMapping("/")
     public String root() {
+        return "intro";
+    }
+
+    @GetMapping("/index")
+    public String index() {
         return "index";
     }
 
@@ -79,6 +84,7 @@ public class WebController {
         UserProfile freshUserProfile = userProfileService.findById(loggedInUser.getId());
         session.setAttribute("loggedInUser", freshUserProfile);
         model.addAttribute("userProfile", freshUserProfile);
+        model.addAttribute("guardianInfos", freshUserProfile.getGuardians());
         return "emergency-contacts";
     }
 
@@ -133,6 +139,7 @@ public class WebController {
         UserProfile freshUserProfile = userProfileService.findById(loggedInUser.getId());
         session.setAttribute("loggedInUser", freshUserProfile);
         model.addAttribute("userProfile", freshUserProfile);
+        model.addAttribute("guardianInfos", freshUserProfile.getGuardians());
 
         return "emergency-contacts";
     }

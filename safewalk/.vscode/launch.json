@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-SafewalkApplication<safewalk>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.app_uracle.safewalk.SafewalkApplication",
+      "projectName": "safewalk",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

@@ -1,65 +1,74 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=360, user-scalable=no" />
-        <title>긴급 연락처 - SafeWalk</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@700;900&display=swap" rel="stylesheet" />
-        <link
-            rel="stylesheet"
-            as="style"
-            crossorigin
-            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
-        />
-        <link rel="stylesheet" href="/css/style.css" />
-    </head>
-    <body>
-        <div id="app-container" class="main-layout">
-            <header class="app-header">
-                <a th:href="@{'/main'}" class="btn-icon">
-                    <i class="fas fa-arrow-left"></i>
-                </a>
-                <h2 class="header-title">긴급 연락처</h2>
-                <a th:href="@{'/edit-contacts'}" class="btn-icon"><i class="fas fa-edit"></i></a>
-            </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=360, user-scalable=no" />
+    <title>긴급 연락처 - SafeWalk</title>
 
-            <main class="app-content">
-                <div class="list-item">
-                    <div class="item-info">
-                        <span class="name">119 (긴급)</span>
-                        <span class="phone">119</span>
-                    </div>
-                    <a href="tel:119" class="call-button"><i class="fas fa-phone-alt"></i></a>
+    <!-- 폰트 & 아이콘 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@700;900&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+
+  <body>
+    <div id="app-container" class="emergency-contacts">
+      <header class="app-header">
+        <a th:href="@{/main}" class="btn-icon"><i class="fas fa-arrow-left"></i></a>
+        <h2 class="header-title">긴급 연락처</h2>
+        <a th:href="@{/edit-contacts}" class="btn-icon"><i class="fas fa-edit"></i></a>
+      </header>
+
+      <main class="app-content">
+        <!-- 상단 119 -->
+        <div class="emergency-top">
+          <div class="card emergency-119">
+            <div class="card-content">
+              <div class="card-name">🚨 119 (긴급)</div>
+              <div class="card-description">긴급 상황 시 119에 즉시 연결합니다.</div>
+              <a href="tel:119" class="card-button">
+                <div>긴급 전화</div>
+                <div class="card-button-call">
+                  <span class="iconify" data-icon="line-md:phone-call-loop"></span>
                 </div>
-                <div class="list-item">
-                    <div class="item-info">
-                        <span class="name" th:text="${userProfile.pName + ' (' + userProfile.relation + ')'}"></span>
-                        <span class="phone" th:text="${userProfile.pPhoneNumber}"></span>
-                    </div>
-                    <a th:href="${'tel:' + userProfile.pPhoneNumber}" class="call-button"><i class="fas fa-phone-alt"></i></a>
-                </div>
-
-                <!-- 추가된 보호자 목록 -->
-                <div th:each="guardian : ${userProfile.guardians}" class="list-item">
-                    <div class="item-info">
-                        <span class="name" th:text="${guardian.name + ' (' + guardian.relation + ')'}"></span>
-                        <span class="phone" th:text="${guardian.phoneNumber}"></span>
-                    </div>
-                    <a th:href="${'tel:' + guardian.phoneNumber}" class="call-button"><i class="fas fa-phone-alt"></i></a>
-                </div>
-
-            </main>
-
-            <nav class="bottom-nav three-tabs">
-                <a th:href="@{'/main'}" class="nav-item"> <i class="fas fa-shield-alt"></i><span>홈 (카메라)</span> </a>
-                <a th:href="@{'/my-info'}" class="nav-item"> <i class="fas fa-user"></i><span>내 정보</span> </a>
-                <a th:href="@{'/emergency-contacts'}" class="nav-item active">
-                    <i class="fas fa-address-book"></i><span>긴급 연락처</span>
-                </a>
-            </nav>
+              </a>
+            </div>
+          </div>
         </div>
-    </body>
+
+        <!-- 하단 일반 연락처 -->
+        <div class="contact-grid">
+          <div class="card" th:each="guardian : ${guardianInfos}">
+            <div class="card-name" th:text="${guardian.name}">👨 김철수</div>
+            <div class="card-description">
+              <div class="relation" th:text="${guardian.relation}">아버지</div>
+              <div class="phone" th:text="${guardian.phoneNumber}">010-1234-5678</div>
+            </div>
+            <a th:href="'tel:' + ${guardian.phoneNumber}" class="card-button">
+              <div>전화</div>
+              <div class="card-button-call">
+                <span class="iconify" data-icon="line-md:phone-call-loop"></span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </main>
+
+      <nav class="bottom-nav three-tabs">
+        <a th:href="@{/main}" class="nav-item"> <i class="fas fa-shield-alt"></i><span>홈 (카메라)</span> </a>
+        <a th:href="@{/my-info}" class="nav-item"> <i class="fas fa-user"></i><span>내 정보</span> </a>
+        <a th:href="@{/emergency-access}" class="nav-item active">
+          <i class="fas fa-address-book"></i><span>긴급 연락처</span>
+        </a>
+      </nav>
+    </div>
+  </body>
 </html>

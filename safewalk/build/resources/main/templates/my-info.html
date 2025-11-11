@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=360, user-scalable=no" />
     <title>내 정보 - SafeWalk</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@700;900&display=swap" rel="stylesheet" />
-    <!-- <link rel="stylesheet" th:href="@{/fontawesome/css/all.min.css}" /> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link
       rel="stylesheet"
       as="style"
@@ -17,6 +17,7 @@
     />
     <link rel="stylesheet" th:href="@{/css/style.css}" />
   </head>
+
   <body>
     <div id="app-container" class="main-layout">
       <header class="app-header">
@@ -24,13 +25,18 @@
           <i class="fa-solid fa-arrow-left"></i>
         </a>
         <h2 class="header-title">내 정보</h2>
-        <a th:href="@{'/edit-info'}" class="btn-icon"><i class="fa-solid fa-pen-to-square"></i></a>
+        <a th:href="@{'/edit-info'}" class="btn-icon">
+          <i class="fa-solid fa-pen-to-square"></i>
+        </a>
       </header>
 
       <main class="app-content vertical-card-wrapper">
+        <div class="string left"></div>
+        <div class="string right"></div>
+
         <div class="profile-summary">
-          <strong class="profile-name" th:text="${userProfile.name}">홍길동</strong>
-          <span class="profile-email" th:text="${userProfile.email}">user@example.com</span>
+          <strong class="profile-name" th:text="${userProfile.name}">김나현</strong>
+          <span class="profile-email" th:text="${userProfile.email}">abc@a.b.c</span>
         </div>
 
         <div class="outer" id="card-swiper">
@@ -42,7 +48,7 @@
                 </div>
                 <span class="label">이름</span>
               </div>
-              <p class="value" th:text="${userProfile.name}">홍길동</p>
+              <p class="value" th:text="${userProfile.name}">김나현</p>
             </div>
           </div>
 
@@ -54,19 +60,7 @@
                 </div>
                 <span class="label">이메일</span>
               </div>
-              <p class="value" th:text="${userProfile.email}">user@example.com</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="content">
-              <div class="details">
-                <div class="icon-placeholder">
-                  <i class="fa-solid fa-phone"></i>
-                </div>
-                <span class="label">전화번호</span>
-              </div>
-              <p class="value" th:text="${userProfile.phoneNumber}">010-XXXX-XXXX</p>
+              <p class="value" th:text="${userProfile.email}">abc@a.b.c</p>
             </div>
           </div>
 
@@ -78,23 +72,7 @@
                 </div>
                 <span class="label">생년월일</span>
               </div>
-              <p class="value" th:text="${#temporals.format(userProfile.birthDay, 'yyyy년 MM월 dd일')}">
-                2000년 01월 01일
-              </p>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="content">
-              <div class="details">
-                <div class="icon-placeholder">
-                  <i class="fa-solid fa-house"></i>
-                </div>
-                <span class="label">주소</span>
-              </div>
-              <p class="value" th:text="${userProfile.address + ' ' + userProfile.addressDetail}">
-                서울특별시 OOO구 OOO로
-              </p>
+              <p class="value" th:text="${userProfile.birthDay}"></p>
             </div>
           </div>
 
@@ -106,7 +84,7 @@
                 </div>
                 <span class="label">혈액형</span>
               </div>
-              <p class="value" th:text="${userProfile.bloodType + '형'}">AB형</p>
+              <p class="value" th:text="${userProfile.bloodType + '형'}">A형</p>
             </div>
           </div>
 
@@ -118,12 +96,7 @@
                 </div>
                 <span class="label">지병</span>
               </div>
-              <p
-                class="value"
-                th:text="${(userProfile.chronicIllness != null and #strings.trim(userProfile.chronicIllness).length() > 0) ? userProfile.chronicIllness : '해당 없음'}"
-              >
-                당뇨, 고혈압
-              </p>
+              <p class="value" th:text="${userProfile.chronicIllness ?: '해당 없음'}">해당 없음</p>
             </div>
           </div>
 
@@ -135,12 +108,7 @@
                 </div>
                 <span class="label">복용 약물</span>
               </div>
-              <p
-                class="value"
-                th:text="${(userProfile.medicine != null and #strings.trim(userProfile.medicine).length() > 0) ? userProfile.medicine : '해당 없음'}"
-              >
-                메트포르민, 아스피린
-              </p>
+              <p class="value" th:text="${userProfile.medicine ?: '해당 없음'}">해당 없음</p>
             </div>
           </div>
 
@@ -152,12 +120,7 @@
                 </div>
                 <span class="label">기타 사항</span>
               </div>
-              <p
-                class="value"
-                th:text="${(userProfile.etc != null and #strings.trim(userProfile.etc).length() > 0) ? userProfile.etc : '해당 없음'}"
-              >
-                땅콩 알레르기 있음
-              </p>
+              <p class="value" th:text="${userProfile.etc ?: '해당 없음'}">없음</p>
             </div>
           </div>
         </div>
@@ -172,6 +135,6 @@
       </nav>
     </div>
 
-    <script src="/js/my-info.js" defer></script>
+    <script src="/js/my-info.js"></script>
   </body>
 </html>
