@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=360, user-scalable=no" />
+        <title>로그인 - SafeWalk</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@700;900&display=swap" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            as="style"
+            crossorigin
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+        />
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <div id="app-container">
+            <header class="app-header minimal">
+                <h1 class="logo-title">SafeWalk</h1>
+            </header>
+
+            <main class="app-content">
+                <form id="login-form" action="/login" method="post">
+                    <h2 class="screen-title">로그인</h2>
+                    <p id="error-message" style="color: red; text-align: center; margin-bottom: 1rem; display: none;"></p>
+                    <input type="text" id="userid" name="email" placeholder="아이디" />
+                    <input type="password" id="password" name="password" placeholder="비밀번호" />
+
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="auto-login" />
+                        <label for="auto-login">자동 로그인</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">로그인</button>
+                </form>
+
+                <div class="link-group">
+                    <a href="/signup">회원가입</a>
+                    <a href="find-id.html">아이디 찾기</a>
+                    <a href="find-password.html">비밀번호 찾기</a>
+                </div>
+            </main>
+        </div>
+        <script src="/js/login.js"></script>
+    </body>
+</html>

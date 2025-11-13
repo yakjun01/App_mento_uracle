@@ -1,0 +1,1165 @@
+/* --- 0. 기본 설정 및 디자인 변수 (The Canvas) --- */
+@font-face {
+  font-family: 'GMarketSans';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GMarketSans';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --color-bg-canvas: #ffeff1; /* 캔버스 배경 */
+  --color-text-indigo: #967aa1; /* 텍스트/UI */
+  --color-text-secondary: #aaa1c8; /* 보조 텍스트 */
+  --color-border: #25262742; /* 경계선 */
+  --color-danger: #b14b58; /* 삭제/탈퇴 */
+
+  --font-main: 'GMarketSans', sans-serif;
+  --font-title: 'GMarketSans', 'Pretendard', sans-serif;
+
+  --spacing-sm: 10px;
+  --spacing-md: 20px;
+  --spacing-lg: 30px;
+  --spacing-xl: 40px;
+
+  --border-radius: 4px;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: #d1d1d1;
+  color: var(--color-text-indigo);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+/* --- 1. 앱 전체 컨테이너 (380px) --- */
+#app-container {
+  width: 380px;
+  height: 740px;
+  background-color: var(--color-bg-canvas);
+  background-image: linear-gradient(rgba(44, 58, 79, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(44, 58, 79, 0.07) 1px, transparent 1px);
+  background-size: 3px 3px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  /* 모든 페이지가 이 레이아웃을 따름 */
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- 2. 화면 공통 레이아웃 --- */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+  background-color: rgba(248, 245, 242, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 10;
+  gap: var(--spacing-sm);
+}
+.app-header.minimal {
+  border-bottom: none;
+}
+.logo-title,
+.header-title {
+  font-family: var(--font-title);
+  font-weight: 700;
+  color: var(--color-text-indigo);
+  margin: 0;
+}
+.logo-title {
+  font-size: 1.5rem;
+}
+.header-title {
+  font-size: 1.1rem;
+  flex-grow: 1; /* 제목이 중앙에 오도록 */
+  text-align: center;
+}
+.header-step {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+/* 헤더 양쪽 아이콘/버튼 자리 (중앙 정렬용) */
+.header-placeholder {
+  width: 44px;
+}
+
+.app-content {
+  padding: var(--spacing-lg);
+  flex-grow: 1;
+  overflow-y: auto;
+}
+.app-content.main-content {
+  padding: 0;
+}
+/* 하단 탭바가 있는 화면용 레이아웃 */
+.main-layout {
+  height: 100%;
+}
+.main-layout .app-content {
+  height: 100%; /* 헤더, 탭바 제외한 영역 */
+}
+
+/* --- 3. 폼 요소 (인쇄된 느낌) --- */
+.screen-title {
+  font-family: var(--font-title);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-xl);
+}
+
+.input-label {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  margin-top: var(--spacing-md);
+  margin-bottom: 10px;
+  display: block;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='tel'],
+input[type='date'],
+.input-select {
+  width: 100%;
+  padding: 15px 0;
+  margin-bottom: var(--spacing-md);
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--color-border);
+  color: var(--color-text-indigo);
+  font-size: 1rem;
+  font-family: var(--font-main);
+  box-sizing: border-box;
+  border-radius: 0;
+  transition: border-color 0.3s ease;
+}
+/* select 태그 기본 화살표 제거 */
+.input-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232c3a4f'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0px center;
+  background-size: 24px;
+  padding-right: 30px; /* 화살표 공간 */
+}
+
+input::placeholder,
+.input-select option[disabled] {
+  color: var(--color-text-secondary);
+}
+input:focus,
+.input-select:focus {
+  outline: none;
+  border-bottom-color: var(--color-text-indigo);
+}
+input[disabled] {
+  background-color: rgba(0, 0, 0, 0.02);
+  color: var(--color-text-secondary);
+  border-bottom-style: dashed;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+.checkbox-wrapper input {
+  margin-right: 10px;
+}
+
+.link-group {
+  text-align: center;
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+}
+.link-group a {
+  color: var(--color-text-secondary);
+  text-decoration: underline;
+  margin: 0 15px;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+.link-group a:hover {
+  color: var(--color-text-indigo);
+}
+
+.notice-box {
+  background-color: rgba(44, 58, 79, 0.05);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-lg);
+}
+.notice-box p {
+  margin: 0 0 5px 0;
+  font-weight: 600;
+}
+.notice-box span,
+.notice-text span {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+.notice-text {
+  margin-top: var(--spacing-md);
+  text-align: center;
+}
+
+/* 아이디 중복확인 등 */
+.input-with-button {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+.input-with-button input {
+  flex-grow: 1;
+  margin-bottom: 0;
+}
+.input-with-button .btn-small {
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  margin-top: 0;
+  height: 50px; /* input 높이와 비슷하게 */
+}
+
+/* --- 4. 버튼 (스탬프/인쇄 느낌) --- */
+.btn {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 1px solid var(--color-text-indigo);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  box-sizing: border-box;
+  margin-top: var(--spacing-md);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+.btn-primary {
+  background-color: var(--color-text-indigo);
+  color: var(--color-bg-canvas);
+}
+.btn-primary:hover {
+  background-color: #1c2638;
+}
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-text-indigo);
+}
+.btn-secondary:hover {
+  background-color: rgba(44, 58, 79, 0.05);
+}
+.btn-danger {
+  background-color: var(--color-danger);
+  color: white;
+  border-color: var(--color-danger);
+}
+.btn-danger:hover {
+  background-color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+/* 화면 하단 고정 버튼 */
+.btn-bottom {
+  margin: var(--spacing-lg) 0 0 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.btn-layout-bottom {
+  padding: var(--spacing-lg);
+  margin-top: auto; /* 내용을 밀어내고 하단에 붙임 */
+  flex-shrink: 0;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  color: var(--color-text-indigo);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 10px;
+  width: 44px;
+  height: 44px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.btn-icon.text-button {
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: var(--font-main);
+}
+
+/* --- 5. 회원가입 단계별 UI --- */
+.toggle-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: var(--spacing-md);
+}
+.toggle-button {
+  padding: 15px 0;
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.toggle-button.active {
+  background-color: var(--color-text-indigo);
+  border-color: var(--color-text-indigo);
+  color: var(--color-bg-canvas);
+  font-weight: 600;
+}
+/* 라디오 버튼용 스타일 */
+.radio-group input[type='radio'] {
+  display: none;
+}
+.radio-group label {
+  padding: 15px 0;
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: block;
+  text-align: center;
+}
+.radio-group input[type='radio']:checked + label {
+  background-color: var(--color-text-indigo);
+  border-color: var(--color-text-indigo);
+  color: var(--color-bg-canvas);
+  font-weight: 600;
+}
+.radio-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: var(--spacing-md);
+}
+
+/* --- 6. 메인 화면 & 하단 네비게이션 --- */
+.camera-placeholder {
+  flex-grow: 1;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+.camera-status {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 15px;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* 3단 탭바 */
+.bottom-nav.three-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-top: 1px solid var(--color-border);
+  background-color: rgba(248, 245, 242, 0.8);
+  flex-shrink: 0;
+  z-index: 100;
+}
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 10px 0;
+  height: 60px;
+  transition: color 0.2s ease;
+  border-right: 1px solid var(--color-border);
+  text-decoration: none;
+}
+.nav-item:last-child {
+  border-right: none;
+}
+.nav-item i {
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+}
+.nav-item.active {
+  color: var(--color-text-indigo);
+  font-weight: 600;
+}
+.nav-item:hover {
+  color: var(--color-text-indigo);
+}
+
+/* --- 7. 연락처/정보 리스트 (아날로그) --- */
+.list-item,
+.info-item,
+.settings-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--color-border);
+  text-decoration: none;
+  color: var(--color-text-indigo);
+}
+.item-info {
+  /* 연락처용 */
+  display: flex;
+  flex-direction: column;
+}
+.info-item {
+  /* 내 정보용 */
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+.item-info .name,
+.info-list span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-indigo);
+  display: block;
+}
+.item-info .phone,
+.info-list label {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+}
+.info-list label {
+  margin-bottom: 0;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.info-list label .icon-label {
+  width: 16px;
+  text-align: center;
+}
+
+.call-button {
+  width: 44px;
+  height: 44px;
+  background-color: rgba(44, 58, 79, 0.1); /* 연한 인디고 */
+  color: var(--color-text-indigo);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+.call-button:hover {
+  background-color: rgba(44, 58, 79, 0.2);
+}
+
+/* 연락처 수정용 삭제 버튼 */
+.delete-button {
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-danger);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+.delete-button:hover {
+  background-color: #c9302c;
+}
+
+/* 설정 리스트 */
+.settings-list-item {
+  font-weight: 500;
+  padding: calc(var(--spacing-md) + 5px) 0;
+}
+
+/* --- 8. 인트로 애니메이션 (SplitText) --- */
+#screen-intro {
+  position: fixed; /* 다른 HTML과 분리되었으므로 fixed 사용 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background-color: var(--color-bg-canvas); /* body 배경이 아닌 캔버스 배경 */
+}
+.intro-text-wrapper {
+  color: var(--color-text-indigo);
+  font-family: var(--font-title);
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+  filter: url(#stitch-filter); /* SVG 필터 */
+}
+.intro-text .char {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* --- 9. 모달 (팝업) 스타일 --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-content {
+  background-color: var(--color-bg-canvas);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  width: 280px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.modal-content p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 0 var(--spacing-lg) 0;
+}
+.modal-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-sm);
+}
+.modal-buttons-center {
+  display: flex;
+  justify-content: center;
+}
+.modal-button {
+  padding: var(--spacing-md);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.modal-button.cancel {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+.modal-button.cancel:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.modal-button.confirm {
+  background-color: var(--color-text-indigo);
+  color: var(--color-bg-canvas);
+  border: 1px solid var(--color-text-indigo);
+}
+.modal-button.confirm-danger {
+  background-color: var(--color-danger);
+  color: white;
+  border: 1px solid var(--color-danger);
+}
+
+/* 내 정보 카드 */
+.card .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  margin-left: 10px;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.card .details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.card .value {
+  margin-top: 0;
+}
+
+.card .content .details .icon-placeholder {
+  margin-top: 10px;
+}
+
+.card .content .value {
+  font-size: 1rem;
+  margin-top: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card .content .details .label {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.icon-placeholder .fa-user {
+  color: #9a9b9c;
+}
+
+.icon-placeholder .fa-envelope {
+  color: #99d7df;
+}
+
+.icon-placeholder .fa-cake-candles {
+  color: #ffe600;
+}
+
+.icon-placeholder .fa-house {
+  color: #9a9b9c;
+}
+
+.icon-placeholder .fa-droplet {
+  color: #e93d2a;
+}
+
+.icon-placeholder .fa-notes-medical {
+  color: #e93d2a;
+}
+
+.icon-placeholder .fa-pills {
+  color: #e93d2a;
+}
+
+.icon-placeholder .fa-triangle-exclamation {
+  color: #f39c12;
+}
+
+.outer {
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-top: 16vh;
+  margin-bottom: auto;
+}
+.outer .card {
+  background: #fff;
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  justify-content: space-between;
+  border-radius: 15px;
+  box-shadow: 0px 8px 12px rgba(44, 58, 79, 0.1);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  transform: translateY(30px) scale(0.9);
+  box-sizing: border-box;
+}
+.outer .card.prev {
+  opacity: 0.6;
+  pointer-events: none;
+  transform: translateY(-70px) scale(0.88);
+  z-index: 1;
+}
+.outer .card.prev2 {
+  opacity: 0.35;
+  pointer-events: none;
+  transform: translateY(-140px) scale(0.78);
+  z-index: 0;
+}
+.outer .card.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0px) scale(1.03);
+  z-index: 2;
+}
+.outer .card.next {
+  opacity: 0.6;
+  pointer-events: none;
+  transform: translateY(70px) scale(0.88);
+  z-index: 1;
+}
+.outer .card.next2 {
+  opacity: 0.35;
+  pointer-events: none;
+  transform: translateY(140px) scale(0.78);
+  z-index: 0;
+}
+.outer .card.expanded {
+  /* 
+  transform: translate(-50%, -50%) translateY(0) scale(1.1);
+  position: fixed;
+  width: 80%;
+  max-width: 320px;
+  left: 50%;
+  top: 50%; 
+  */
+  opacity: 1;
+  z-index: 1000;
+  pointer-events: auto;
+  padding: 25px 20px;
+}
+.outer .card.expanded .details {
+  margin-top: 2px;
+  gap: 2px;
+}
+.outer .card.expanded .details .icon-placeholder {
+  height: 50px;
+  width: 50px;
+  min-width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.outer .card.expanded .icon-placeholder i {
+  font-size: 1.5rem;
+}
+.outer .card.expanded .details .label {
+  font-size: 1.1rem;
+}
+.outer .card.expanded .value {
+  font-size: 1.1rem;
+  white-space: normal; /* 여러 줄 허용 */
+  word-break: break-all;
+  margin-left: 12px;
+}
+
+#signup-content-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* 끈 */
+.string {
+  position: absolute;
+  width: 2px;
+  height: 70px;
+  background: rgba(17, 25, 37, 0.55);
+  transform-origin: top center;
+  z-index: 4;
+  animation: swayTogether 4.5s ease-in-out infinite;
+}
+.string.left {
+  top: 96px;
+  left: calc(50% - 130px);
+  --angle: -25deg;
+}
+.string.right {
+  top: 96px;
+  right: calc(50% - 130px);
+  --angle: 25deg;
+}
+
+/* 흔들림 효과 */
+@keyframes swayTogether {
+  0% {
+    transform: rotate(var(--angle)) translateX(0);
+  }
+  25% {
+    transform: rotate(calc(var(--angle) + 2deg)) translateX(1px);
+  }
+  50% {
+    transform: rotate(calc(var(--angle) - 2.5deg)) translateX(-1px);
+  }
+  75% {
+    transform: rotate(calc(var(--angle) + 1deg)) translateX(0.5px);
+  }
+  100% {
+    transform: rotate(var(--angle)) translateX(0);
+  }
+}
+
+/* 프로필 현수막 */
+.profile-summary {
+  background: radial-gradient(
+      circle at top center,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(245, 242, 238, 0.95) 60%,
+      rgba(240, 237, 234, 0.9) 100%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(44, 58, 79, 0.05) 0,
+      rgba(44, 58, 79, 0.05) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  padding: 26px 0 22px;
+  text-align: center;
+  border-bottom: 1px solid rgba(44, 58, 79, 0.08);
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08), inset 0 -1px 0 rgba(255, 255, 255, 0.7);
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  opacity: 0;
+  animation: unfoldFromTop 1.8s cubic-bezier(0.23, 1, 0.32, 1) forwards, swayBanner 4.5s ease-in-out 1.8s infinite;
+  position: relative;
+  z-index: 5;
+  width: 280px;
+  margin: 0 auto;
+}
+
+/* 접혀서 아래로 펼쳐지는 효과 */
+@keyframes unfoldFromTop {
+  0% {
+    transform: rotateX(-110deg) scaleY(0.2) translateY(-60px);
+    opacity: 0;
+    filter: blur(6px);
+  }
+  25% {
+    transform: rotateX(70deg) scaleY(1.3) translateY(20px);
+    opacity: 1;
+    filter: blur(2px);
+  }
+  55% {
+    transform: rotateX(-40deg) scaleY(0.9) translateY(-10px);
+  }
+  75% {
+    transform: rotateX(15deg) scaleY(1.05) translateY(5px);
+  }
+  90% {
+    transform: rotateX(-5deg) scaleY(0.98);
+  }
+  100% {
+    transform: rotateX(0deg) scaleY(1) translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* 좌우 흔들림 */
+@keyframes swayBanner {
+  0% {
+    transform: rotateX(0deg) rotateZ(0deg);
+  }
+  25% {
+    transform: rotateX(0.5deg) rotateZ(1.8deg);
+  }
+  50% {
+    transform: rotateX(-0.6deg) rotateZ(-1.8deg);
+  }
+  75% {
+    transform: rotateX(0.3deg) rotateZ(1.2deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateZ(0deg);
+  }
+}
+
+.profile-summary .profile-name {
+  font-family: 'Vollkorn', serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--color-text-indigo);
+  letter-spacing: -0.02em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.profile-summary .profile-name::after {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 1px;
+  margin: 6px auto 0 auto;
+  background: rgba(44, 58, 79, 0.25);
+}
+
+.profile-summary .profile-email {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  margin-top: 8px;
+  display: block;
+  font-weight: 500;
+}
+
+.vertical-card-wrapper .outer {
+  margin-top: 9vh !important;
+  height: calc(100% - 240px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-summary::after {
+  content: '';
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.08), transparent 70%);
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.vertical-card-wrapper .outer .card.active {
+  transform: translateY(0) scale(1.02);
+  box-shadow: 0 6px 10px rgba(44, 58, 79, 0.1);
+}
+
+.vertical-card-wrapper .outer .card.prev,
+.vertical-card-wrapper .outer .card.next {
+  opacity: 0.55;
+}
+
+#app-container.emergency-contacts {
+  height: 740px;
+}
+
+.app-content.emergency-contacts {
+  gap: 1.6rem;
+}
+
+/* 상단 119 카드  */
+.emergency-top {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card.emergency-119 {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  border-radius: 18px;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card.emergency-119::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/img/ambulance-bg.jpeg') center/cover no-repeat;
+  filter: brightness(0.65) blur(2px);
+  z-index: 0;
+}
+
+.card.emergency-119::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 50, 50, 0.65);
+  z-index: 1;
+}
+
+.card.emergency-119 .card-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.card.emergency-119 .card-name {
+  font-family: var(--font-title);
+  font-size: 1.7rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.card.emergency-119 .card-description {
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+.card.emergency-119 .card-button {
+  position: relative;
+  width: 80%;
+  max-width: 280px;
+  margin-top: 1rem;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  padding: 12px 56px 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.card.emergency-119 .card-button:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.card.emergency-119 .card-button-call {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  color: #e03131;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.contact-grid-container .card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(44, 58, 79, 0.08);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-grid-container .card .card-name {
+  font-weight: 800;
+  font-size: 1.1rem;
+  white-space: normal;
+}
+
+.contact-grid-container .card .card-description {
+  font-size: 1.1rem;
+  font-weight: 800;
+  font-family: var(--font-title);
+}
+
+.contact-grid-container .card .card-description {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  line-height: 1.3;
+  opacity: 0.9;
+}
+
+.contact-grid-container .card .relation {
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.contact-grid-container .card .phone {
+  font-weight: 600;
+  color: var(--color-text-indigo);
+}
+
+.contact-grid-container .card .card-button {
+  position: relative;
+  width: 55%;
+  margin: 8px auto 0 auto;
+  border-radius: 999px;
+  background: var(--color-text-indigo);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 10px 40px 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.contact-grid-container .card .card-button-call {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--color-text-indigo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+}
+
+.contact-grid-container .card .card-button:hover {
+  transform: translateY(-2px);
+  background: #fcb4c4;
+}

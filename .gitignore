@@ -1,0 +1,6 @@
+Camera/.idea/workspace.xml
+*.apk
+
+# Gradle
+.gradle/
+build/

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=360, user-scalable=no" />
+    <title>SafeWalk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@700;900&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      .camera-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: #000;
+      }
+      .video-feed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 비디오를 컨테이너에 꽉 채움 (잘릴 수 있음) */
+      }
+      .detection-canvas {
+        position: absolute;
+        top: 50px; /* 헤더 아래로 이동 */
+        left: 50px; /* 왼쪽에서 여백 */
+        width: 200px; /* 고정 크기 */
+        height: 200px; /* 고정 크기 */
+        background-color: rgba(255, 0, 0, 0.5); /* 눈에 띄는 배경색 */
+        border: 5px solid blue; /* 강한 테두리 */
+        z-index: 10;
+      }
+      .loading-indicator {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: transparent !important; /* 강제로 투명하게 설정 */
+        color: white !important; /* 강제로 흰색으로 설정 */
+        padding: 5px 10px;
+        border-radius: 5px;
+        z-index: 20;
+      }
+      .fps-counter {
+        top: auto;
+        bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app-container" class="main-layout">
+      <header class="app-header main-header">
+        <h1 class="logo-title">SafeWalk</h1>
+        <a th:href="@{'/settings'}" class="btn-icon"><i class="fas fa-cog"></i></a>
+      </header>
+
+      <main class="app-content main-content">
+        <div class="camera-container">
+          <div id="loading-indicator">카메라를 불러오는 중...</div>
+          <video id="video-feed" autoplay playsinline muted></video>
+          <div id="detection-overlay"></div>
+        </div>
+      </main>
+
+      <nav class="bottom-nav three-tabs">
+        <a th:href="@{'/main'}" class="nav-item active"> <i class="fas fa-shield-alt"></i><span>홈 (카메라)</span> </a>
+        <a th:href="@{'/my-info'}" class="nav-item"> <i class="fas fa-user"></i><span>내 정보</span> </a>
+        <a th:href="@{'/emergency-contacts'}" class="nav-item">
+          <i class="fas fa-address-book"></i><span>긴급 연락처</span>
+        </a>
+      </nav>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.23.0/dist/ort.min.js"></script>
+    <script src="/js/object-detection.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.body.addEventListener(
+          'click',
+          () => {
+            if (objectDetectionApp.audioContext && objectDetectionApp.audioContext.state === 'suspended') {
+              objectDetectionApp.audioContext.resume();
+            }
+          },
+          { once: true }
+        );
+
+        objectDetectionApp.init();
+      });
+    </script>
+  </body>
+</html>

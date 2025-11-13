@@ -1,0 +1,97 @@
+<div th:fragment="step1-content">
+    <form id="signup-form-1" data-step="1">
+        <label class="input-label" for="username">이름</label>
+        <input type="text" id="username" name="username" placeholder="이름을 입력하세요" th:value="${userProfile.name}" />
+
+        <label class="input-label" for="email">이메일 (아이디)</label>
+        <input type="email" id="email" name="email" placeholder="이메일을 입력하세요" th:value="${userProfile.email}" />
+        <div class="input-with-button">
+            <button type="button" id="check-email-button" class="btn btn-secondary btn-small">중복확인</button>
+        </div>
+        <p id="email-check-msg" style="font-size: 0.8rem; display: none; margin-top: 4px"></p>
+
+        <label class="input-label" for="password">비밀번호</label>
+        <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" />
+
+        <label class="input-label" for="password-confirm">비밀번호 확인</label>
+        <input type="password" id="password-confirm" placeholder="비밀번호 확인" />
+        <p id="password-error" style="color: red; font-size: 0.8rem; display: none; margin-top: 4px">
+            비밀번호가 일치하지 않습니다.
+        </p>
+
+        <button type="submit" class="btn btn-primary" style="margin-top: 20px">다음</button>
+    </form>
+</div>
+
+<div th:fragment="step2-content">
+    <div class="notice-box">
+        <p>유의사항 알림</p>
+        <span>응급 상황 시 필요한 정보로, 응급요원에게 이 정보는 안전하게 보호됩니다.</span>
+    </div>
+
+    <form id="signup-form-2" data-step="2">
+        <label class="input-label" for="birthdate">생년월일</label>
+        <input type="date" id="birthdate" name="birthdate" placeholder="YYYY / MM / DD" th:value="${userProfile.birthDay != null ? #temporals.format(userProfile.birthDay, 'yyyy-MM-dd') : ''}" required />
+
+        <label class="input-label" for="phone">전화번호</label>
+        <input type="tel" id="phone" name="phone" placeholder="'-' 없이 숫자만 입력" th:value="${userProfile.phoneNumber}" required />
+
+        <label class="input-label" for="address">주소</label>
+        <input type="text" id="address" name="address" placeholder="건물, 지번 또는 도로명 검색" th:value="${userProfile.address}" required />
+        <input type="text" id="address-detail" name="addressDetail" placeholder="상세주소" th:value="${userProfile.addressDetail}" />
+
+        <label class="input-label">혈액형</label>
+        <div class="radio-group">
+            <input type="radio" name="bloodType" id="blood-a" value="A" th:checked="${userProfile.bloodType == 'A'}" />
+            <label for="blood-a">A형</label>
+            <input type="radio" name="bloodType" id="blood-b" value="B" th:checked="${userProfile.bloodType == 'B'}" />
+            <label for="blood-b">B형</label>
+            <input type="radio" name="bloodType" id="blood-o" value="O" th:checked="${userProfile.bloodType == 'O'}" />
+            <label for="blood-o">O형</label>
+            <input type="radio" name="bloodType" id="blood-ab" value="AB" th:checked="${userProfile.bloodType == 'AB'}" />
+            <label for="blood-ab">AB형</label>
+        </div>
+
+        <label class="input-label" for="medical-condition">지병 (선택)</label>
+        <input type="text" id="medical-condition" name="medicalCondition" placeholder="앓고 있는 지병을 모두 적어주세요." th:value="${userProfile.chronicIllness}" />
+
+        <label class="input-label" for="medication">복용 약물 (선택)</label>
+        <input type="text" id="medication" name="medication" placeholder="복용 중인 약물을 모두 적어주세요." th:value="${userProfile.medicine}" />
+
+        <label class="input-label" for="other-notes">기타 사항 (선택)</label>
+        <input type="text" id="other-notes" name="otherNotes" placeholder="기타 사항을 모두 적어주세요." th:value="${userProfile.etc}" />
+
+        <button type="submit" class="btn btn-primary">다음</button>
+    </form>
+</div>
+
+<div th:fragment="step3-content">
+    <form id="signup-form-3" data-step="3">
+        <label class="input-label" for="guardian-name">보호자 이름</label>
+        <input type="text" id="guardian-name" name="pName" placeholder="보호자 이름을 입력하세요." th:value="${userProfile.pName}" required />
+
+        <label class="input-label" for="relationship">보호자와의 관계</label>
+        <select id="relationship" name="relation" class="input-select" required>
+            <option value="" disabled selected>보호자와의 관계를 선택하세요</option>
+            <option value="father" th:selected="${userProfile.relation == 'father'}">부</option>
+            <option value="mother" th:selected="${userProfile.relation == 'mother'}">모</option>
+            <option value="sibling" th:selected="${userProfile.relation == 'sibling'}">형제/자매</option>
+            <option value="spouse" th:selected="${userProfile.relation == 'spouse'}">배우자</option>
+            <option value="other" th:selected="${userProfile.relation == 'other'}">기타</option>
+        </select>
+
+        <label class="input-label" for="guardian-phone">보호자 전화번호</label>
+        <input type="tel" id="guardian-phone" name="pPhoneNumber" placeholder="'-' 없이 숫자만 입력" th:value="${userProfile.pPhoneNumber}" required />
+
+        <div class="notice-text">
+            <span>※ 위급 상황 시 보호자에게 연락하기 위해 정보가 필요합니다.</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">가입 완료</button>
+    </form>
+</div>
+
+<div th:fragment="error-content">
+    <p>세션이 만료되었거나 잘못된 접근입니다. 처음부터 다시 시도해주세요.</p>
+    <a href="/signup" class="btn btn-primary">회원가입 처음으로</a>
+</div>

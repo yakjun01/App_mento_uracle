@@ -1,0 +1,2 @@
+
+#import <MQr/MQrPlugin.h>
